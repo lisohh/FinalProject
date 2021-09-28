@@ -393,7 +393,7 @@ public class AdminController {
 	}
 	
 	@ResponseBody
-	@RequestMapping(value="/farmList_ajax")
+	@RequestMapping(value="/farmList_ajax") 
 	public Map<String, Object> farmList_ajax(
 			@RequestParam(value="page", defaultValue="1", required = false) int page,
 			@RequestParam(value="farmSelect", required=false) int farmSelect){

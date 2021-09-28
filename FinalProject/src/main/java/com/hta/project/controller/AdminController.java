@@ -26,7 +26,6 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.hta.project.domain.Category;
-import com.hta.project.domain.Farm;
 import com.hta.project.domain.Member;
 import com.hta.project.domain.Notice;
 import com.hta.project.domain.Product;
@@ -360,8 +359,7 @@ public class AdminController {
 	}
 	
 	@GetMapping("/farmList")
-	public ModelAndView farmList(@RequestParam(value="page", defaultValue="1", required=false) int page, 
-			   ModelAndView mv) {
+	public String farmList() {
 		logger.info("Admin farmList()");
 		
 		int limit = 2;
@@ -424,6 +422,9 @@ public class AdminController {
 		map.put("limit", limit);
 		return map;
 		
+=======
+		return "jjs/admin/farmList";
+>>>>>>> refs/remotes/origin/hyun
 	}
 	
 	@PostMapping("/categoryList")

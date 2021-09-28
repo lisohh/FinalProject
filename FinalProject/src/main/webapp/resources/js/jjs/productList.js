@@ -80,7 +80,7 @@ function productCategoryList(sdata){
 							+ "type='checkbox' value='"
 							+ item.product_code
 							+ "'></td>";
-					output += "<td class='align-middle'><img src='/project/resources/upload" + item.product_img + "' style='width : 85px; height : 70px;'>"
+					output += "<td class='align-middle'><img src='" + src + item.product_img + "' style='width : 85px; height : 70px;'>"
 							+ "</td>";
 					output += "<td class='align-middle'><div><a href='productDetail?code="
 							+ item.product_code
@@ -141,7 +141,6 @@ function productCategoryList(sdata){
 				$(".clearfix").prepend(output);
 				
 			}else if(data.listcount == 0){
-				$(".productNo").remove();
 				var message = "<p class='text-center h2 mt-3 mb-3 productNo'><span>등록된 상품이 없습니다.</span></p>";
 				$("tbody").remove();
 				$(".pagination").empty();

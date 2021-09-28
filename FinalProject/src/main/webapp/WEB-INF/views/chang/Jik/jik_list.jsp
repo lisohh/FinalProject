@@ -64,9 +64,9 @@
 	  </td>
 	  <td><%--제목 --%>
 	     <div>			
-			<a href="detail?num=${b.jik_num}" >
-				 <c:out value="${b.jik_subject}" escapeXml="true"/>  
-			<span class="gray small">[<c:out value="${b.cnt}" />]</span>
+			
+			<a href="detail?num=${b.jik_num}">
+				 <c:out value="${b.jik_subject}" />  
 			</a>
 		  </div>
 		</td>

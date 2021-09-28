@@ -40,9 +40,8 @@ public class MainController {
 	
 	//상품 목록 
 	@RequestMapping(value = "products/list", method = RequestMethod.GET)
-	public void getProductsList(String category_code) throws Exception {
+	public void getProductsList() throws Exception {
 		logger.info("get products list");
-		logger.info(category_code);
 	}
 	
 	

@@ -16,6 +16,7 @@
 		<typeAlias alias="notice" 		type="com.hta.project.domain.Notice"/>
 		<typeAlias alias="member" 		type="com.hta.project.domain.Member"/>
 		<typeAlias alias="product" 		type="com.hta.project.domain.Product"/>
+		<typeAlias alias="product1" 	type="com.hta.project.domain.Product"/>
 		<typeAlias alias="category" 	type="com.hta.project.domain.Category"/>
 		<typeAlias alias="farm" 		type="com.hta.project.domain.Farm"/>
      </typeAliases>
@@ -27,7 +28,7 @@
        	<mapper resource="sql/Jik_Comm.xml" />
        	<mapper resource="sql/notice.xml" />
        	<mapper resource="sql/member.xml" />
-       	<mapper resource="sql/product.xml" />
+       	<mapper resource="sql/shopMapper.xml" />
        	<mapper resource="sql/farm.xml" />
      </mappers>
 </configuration>

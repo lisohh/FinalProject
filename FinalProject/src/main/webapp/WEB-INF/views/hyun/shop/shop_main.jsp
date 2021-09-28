@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -207,14 +206,14 @@ label.right {
 		<ul class="nav nav-tabs nav-justified">
 			<li class="nav-item"><a class="nav-link active" href="home">장터홈</a>
 			</li>
-			<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/products/list?category_code=100">씨앗/모종</a></li>
-			<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}products/list?category_code=200">비료/상토</a></li>
-			<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}products/list?category_code=300">살충제</a>
+			<li class="nav-item"><a class="nav-link" href="seed">씨앗/모종</a></li>
+			<li class="nav-item"><a class="nav-link" href="soil">비료/상토</a></li>
+			<li class="nav-item"><a class="nav-link" href="pesticide">살충제</a>
 			</li>
-			<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}products/list?category_code=400">농기구</a></li>
-			<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}products/list?category_code=500">퍼스나콘</a>
+			<li class="nav-item"><a class="nav-link" href="tools">농기구</a></li>
+			<li class="nav-item"><a class="nav-link" href="personacon">퍼스나콘</a>
 			</li>
-			<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}products/list?category_code=600">굿즈</a></li>
+			<li class="nav-item"><a class="nav-link" href="goods">굿즈</a></li>
 		</ul>
 	</div>
 

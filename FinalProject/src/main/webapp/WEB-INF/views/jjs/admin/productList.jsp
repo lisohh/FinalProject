@@ -90,7 +90,7 @@ text-decoration : none;
 								<c:if test="${listcount > 0 }">
 									<div class="card-body">
 										<form action="productList">
-											<div class="input-group float-right mb-3" style="width: 400px;">
+											<div class="input-group float-right" style="width: 400px;">
 												<input type="hidden" value="${search_field}" id="search_field">
 												<select id="productSelect" name="search_field">
 													<option value="0" selected>상품이름</option>
@@ -180,10 +180,7 @@ text-decoration : none;
 								</c:if>
 
 								<c:if test="${listcount == 0 }">
-									<div class="card-body">
-										<button class="btn btn-primary" id="productAddBtn">상품등록</button>
-									</div>
-									<p class="text-center h2 mb-5 productNo">
+									<p class="text-center h2 mt-3 mb-3 productNo">
 										<span>등록된 상품이 없습니다.</span>
 									</p>
 								</c:if>

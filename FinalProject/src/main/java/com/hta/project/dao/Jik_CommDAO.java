@@ -14,8 +14,7 @@ public class Jik_CommDAO {
 
 	@Autowired
 	private SqlSessionTemplate sqlSession;
-	
-	
+	/*
 	public int getListCount(int board_num) {
 		return sqlSession.selectOne("Jik_Comms.count",board_num);
 	}
@@ -38,7 +37,30 @@ public class Jik_CommDAO {
 	public int Jik_CommsUpdate(Jik_Comm co) {
 		return sqlSession.update("Jik_Comms.update",co);
 	}
+	*/
 
+	public int getListCount(int board_num) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 
+	public List<Jik_Comm> getCommnetList(Map<String, Integer> map) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
+	public int Jik_CommsInsert(Jik_Comm co) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public int Jik_CommsDelete(int num) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public int Jik_CommsUpdate(Jik_Comm co) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }

@@ -1,5 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <!--
 This is a starter template page. Use this page to start your new project from
@@ -21,17 +20,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- Google Font: Source Sans Pro -->
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 <script src="${pageContext.request.contextPath}/plugins/jquery/jquery.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/jjs/farmList.js"></script>
-<style>
-.gray {
-	color: gray
-}
-
-a:not([href]) {
-	color: gray;
-	text-decoration: none;
-}
-</style>
 </head>
 <body class="hold-transition sidebar-mini">
 	<div class="wrapper">
@@ -72,82 +60,98 @@ a:not([href]) {
 							<div class="card">
 								<div class="card-header">
 									<h3 class="card-title mt-2">농장목록</h3>
-									<select class="form-control float-right" id="farmSelect" style="width: 150px;">
-										<option value="0">최신순</option>
-										<option value="1">멤버인원수</option>
+									<select class="form-control float-right" style="width: 150px;">
+										<option value="0">지역별</option>
+										<option value="1">최신순</option>
+										<option value="2">멤버인원수</option>
 									</select>
 								</div>
 								<!-- /.card-header -->
-								<c:if test="${listcount > 0}">
+								<div class="card-body">
 									<div class="card-body">
-											<c:forEach items="${farmList}" var="f">
-												<div class="row border mb-3">
-													<div class="col-12 col-sm-5">
-														<div class="col-12 mt-5 ml-5">
-															<img src="${pageContext.request.contextPath}/resources/image/jjs/among us.png" style="width: 200px; height: 200px">
-														</div>
-													</div>
-													<div class="col12 col-sm-6">
-														<div class="col-12 mt-3">
-															<div class="input-group">
-																<p class="h4 p-2">농장이름 : <span>${f.mynong_name}</span></p>
-															</div>
-														</div>
-														<div class="col-12 mt-3">
-															<div class="input-group">
-																<p class="h4 p-2">농장관리자 : <span>${f.name}</span></p>
-															</div>
-														</div>
-														<div class="col-12 mt-3">
-															<div class="input-group">
-																<p class="h4 p-2">농장인원수 : <span>${f.membercnt}</span></p>
-															</div>
-														</div>
-														<div class="col-12 mt-3 mb-3">
-															<div class="input-group">
-																<p class="h4 p-2">농장등록일 : <span>${f.mynong_date}</span></p>
-															</div>
-														</div>
+										<div class="row border mb-3">
+											<div class="col-12 col-sm-5">
+												<div class="col-12 mt-5">
+													<img src="${pageContext.request.contextPath}/resources/image/jjs/among us.png" style="width: 200px; height: 200px">
+												</div>
+											</div>
+											<div class="col12 col-sm-6">
+												<div class="col-12 mt-3">
+													<div class="input-group">
+														<label for="farmname" class="mt-2">농장이름</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" id="farmname" class="form-control">
 													</div>
 												</div>
-											</c:forEach>
+												<div class="col-12 mt-3">
+													<div class="input-group">
+														<label for="farmadmin" class="mt-2">농장관리자</label>&nbsp; <input type="text" id="farmname" class="form-control">
+													</div>
+												</div>
+												<div class="col-12 mt-3">
+													<div class="input-group">
+														<label for="farmname" class="mt-2">농장지역</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" id="farmadmin" class="form-control">
+													</div>
+												</div>
+												<div class="col-12 mt-3">
+													<div class="input-group">
+														<label for="farmusercount" class="mt-2">농장인원수</label>&nbsp; <input type="text" id="farmusercount" class="form-control">
+													</div>
+												</div>
+												<div class="col-12 mt-3 mb-3">
+													<div class="input-group">
+														<label for="farmdate" class="mt-2">농장등록일</label>&nbsp; <input type="text" id="farmdate" class="form-control">
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="row border mb-3">
+											<div class="col-12 col-sm-5">
+												<div class="col-12 mt-5">
+													<img src="${pageContext.request.contextPath}/resources/image/jjs/among us.png" style="width: 200px; height: 200px">
+												</div>
+											</div>
+											<div class="col-12 col-sm-6">
+												<div class="col-12 mt-3">
+													<div class="input-group">
+														<label for="farmname" class="mt-2">농장이름</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" id="farmname" class="form-control">
+													</div>
+												</div>
+												<div class="col-12 mt-3">
+													<div class="input-group">
+														<label for="farmadmin" class="mt-2">농장관리자</label>&nbsp; <input type="text" id="farmname" class="form-control">
+													</div>
+												</div>
+												<div class="col-12 mt-3">
+													<div class="input-group">
+														<label for="farmname" class="mt-2">농장지역</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" id="farmadmin" class="form-control">
+													</div>
+												</div>
+												<div class="col-12 mt-3">
+													<div class="input-group">
+														<label for="farmusercount" class="mt-2">농장인원수</label>&nbsp; <input type="text" id="farmusercount" class="form-control">
+													</div>
+												</div>
+												<div class="col-12 mt-3 mb-3">
+													<div class="input-group">
+														<label for="farmdate" class="mt-2">농장등록일</label>&nbsp; <input type="text" id="farmdate" class="form-control">
+													</div>
+												</div>
+											</div>
+										</div>
+
 									</div>
+								</div>
+								<!-- /.card-body -->
 
-									<!-- /.card-body -->
-
-									<div class="card-footer clearfix">
-										<ul class="pagination m-0 justify-content-center">
-											<c:if test="${page <= 1 }">
-												<li class="page-item"><a class="page-link gray">«</a></li>
-											</c:if>
-											<c:if test="${page > 1 }">
-												<li class="page-item"><a href="farmList?page=${page-1}" class="page-link">«</a></li>
-											</c:if>
-
-											<c:forEach var="a" begin="${startpage}" end="${endpage}">
-												<c:if test="${a == page }">
-													<li class="page-item "><a class="page-link gray">${a}</a></li>
-												</c:if>
-												<c:if test="${a != page }">
-													<li class="page-item"><a href="farmList?page=${a}" class="page-link">${a}</a></li>
-												</c:if>
-											</c:forEach>
-
-											<c:if test="${page >= maxpage }">
-												<li class="page-item"><a class="page-link gray">»</a></li>
-											</c:if>
-											<c:if test="${page < maxpage }">
-												<li class="page-item"><a href="farmList?page=${page+1}" class="page-link">»</a></li>
-											</c:if>
-										</ul>
-									</div>
-								</c:if>
-
-								<c:if test="${listcount == 0 }">
-									<p class="text-center h2 mt-3 mb-3">
-										<span>등록된 농장이 없습니다.</span>
-									</p>
-								</c:if>
+								<div class="card-footer clearfix">
+									<ul class="pagination m-0 justify-content-center">
+										<li class="page-item"><a class="page-link" href="#">«</a></li>
+										<li class="page-item"><a class="page-link" href="#">1</a></li>
+										<li class="page-item"><a class="page-link" href="#">2</a></li>
+										<li class="page-item"><a class="page-link" href="#">3</a></li>
+										<li class="page-item"><a class="page-link" href="#">»</a></li>
+									</ul>
+								</div>
 							</div>
 							<!-- /.card -->
 						</div>

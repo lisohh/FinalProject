@@ -26,4 +26,3 @@ values('500', '퍼스나콘');
 
 insert into CATEGORY
 values('600', '굿즈');
-

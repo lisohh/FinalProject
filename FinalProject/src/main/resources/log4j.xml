@@ -19,10 +19,6 @@
 		<level value="trace" />
 	</logger>
 	
-	<logger name="Jik_Comms">
-		<level value="trace" />
-	</logger>
-	
 	<logger name="Notices">
 		<level value="trace" />
 	</logger>
@@ -32,10 +28,6 @@
 	</logger>
 	
 	<logger name="Products">
-		<level value="trace" />
-	</logger>
-	
-	<logger name="Farms">
 		<level value="trace" />
 	</logger>
 	

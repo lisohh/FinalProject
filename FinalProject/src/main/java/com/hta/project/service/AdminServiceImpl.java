@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 
 import com.hta.project.dao.AdminDAO;
 import com.hta.project.domain.Category;
-import com.hta.project.domain.Farm;
 import com.hta.project.domain.Member;
 import com.hta.project.domain.Notice;
 import com.hta.project.domain.Product;
@@ -193,42 +192,6 @@ public class AdminServiceImpl implements AdminService{
 		map.put("word", word);
 		
 		list = dao.getProductCategoryList(map);
-		
-		return list;
-	}
-
-	@Override
-	public List<Farm> farmList(int page, int limit) {
-		List<Farm> list = new ArrayList<Farm>();
-		Map<String, Integer> map = new HashMap<String, Integer>();
-		int startrow = (page - 1) * limit + 1;
-		int endrow = startrow + limit - 1;
-		map.put("start", startrow);
-		map.put("end", endrow);
-		
-		list = dao.getFarmList(map);
-		
-		return list;
-	}
-
-	@Override
-	public int getfarmListCount() {
-		return dao.getfarmListCount();
-	}
-
-	@Override
-	public List<Farm> getFarmSelectList(int page, int limit, int farmSelect) {
-		List<Farm> list = new ArrayList<Farm>();
-		Map<String, Object> map = new HashMap<String, Object>();
-		int startrow = (page - 1) * limit + 1;
-		int endrow = startrow + limit - 1;
-		String[] word = new String[] {"mynong_date", "cnt"};
-		String selectWord = word[farmSelect];
-		map.put("start", startrow);
-		map.put("end", endrow);
-		map.put("selectWord", selectWord);
-		
-		list = dao.getFarmSelectList(map);
 		
 		return list;
 	}

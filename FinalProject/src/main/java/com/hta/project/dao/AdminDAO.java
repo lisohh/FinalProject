@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.hta.project.domain.Category;
-import com.hta.project.domain.Farm;
 import com.hta.project.domain.Member;
 import com.hta.project.domain.Notice;
 import com.hta.project.domain.OkyMynong;
@@ -110,18 +109,6 @@ public class AdminDAO {
 
 	public List<Product> getProductCategoryList(Map<String, Object> map) {
 		return sqlSession.selectList("Products.productCategoryList", map);
-	}
-
-	public List<Farm> getFarmList(Map<String, Integer> map) {
-		return sqlSession.selectList("Farms.list", map);
-	}
-
-	public int getfarmListCount() {
-		return sqlSession.selectOne("Farms.count");
-	}
-
-	public List<Farm> getFarmSelectList(Map<String, Object> map) {
-		return sqlSession.selectList("Farms.selectList", map);
 	}
 
 }

@@ -15,7 +15,6 @@ public class Jik {
 	private String jik_file;  
 	private String jik_original;
 	private MultipartFile uploadfile;
-	private int cnt;
 	
 	public int getJik_num() {
 		return jik_num;
@@ -82,12 +81,6 @@ public class Jik {
 	}
 	public void setJik_id(String jik_id) {
 		this.jik_id = jik_id;
-	}
-	public int getCnt() {
-		return cnt;
-	}
-	public void setCnt(int cnt) {
-		this.cnt = cnt;
 	}
 
 

@@ -17,7 +17,7 @@ import com.hta.project.service.Jik_CommService;
 
 
 @Controller
-@RequestMapping(value="/jik_comm")
+@RequestMapping(value="/comment")
 public class JikCommController {
 
 		@Autowired
@@ -26,10 +26,10 @@ public class JikCommController {
 		
 		@ResponseBody
 		@PostMapping(value = "/list")
-		public Map<String,Object> Jik_CommList(int jik_board_num, int page,String jik_comm_secret){
+		public Map<String,Object> Jik_CommList(int board_num, int page){
 			
-			List<Jik_Comm> list = jik_commService.getJik_CommList(jik_board_num, page);
-			int listcount = jik_commService.getListCount(jik_board_num);
+			List<Jik_Comm> list = jik_commService.getJik_CommList(board_num, page);
+			int listcount = jik_commService.getListCount(board_num);
 			Map<String,Object> map=new HashMap<String,Object>();
 			map.put("list", list);
 			map.put("listcount", listcount);

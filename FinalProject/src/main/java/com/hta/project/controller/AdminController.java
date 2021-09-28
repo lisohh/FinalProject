@@ -26,7 +26,6 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.hta.project.domain.Category;
-import com.hta.project.domain.Farm;
 import com.hta.project.domain.Member;
 import com.hta.project.domain.Notice;
 import com.hta.project.domain.Product;
@@ -360,70 +359,9 @@ public class AdminController {
 	}
 	
 	@GetMapping("/farmList")
-	public ModelAndView farmList(@RequestParam(value="page", defaultValue="1", required=false) int page, 
-			   ModelAndView mv) {
+	public String farmList() {
 		logger.info("Admin farmList()");
-		
-		int limit = 2;
-		
-		int listcount = adminService.getfarmListCount();
-		
-		int maxpage = (listcount + limit - 1) / limit;
-		
-		int startpage = ((page - 1) / 10) * 10 + 1;
-		
-		int endpage = startpage + 10 - 1;
-		
-		if(endpage > maxpage) {
-			endpage = maxpage;
-		}
-		
-		List<Farm> farmList = adminService.farmList(page, limit);
-		
-		mv.addObject("page", page);
-		mv.addObject("maxpage", maxpage);
-		mv.addObject("startpage", startpage);
-		mv.addObject("endpage", endpage);
-		mv.addObject("listcount", listcount);
-		mv.addObject("farmList", farmList);
-		mv.addObject("limit", limit);
-		
-		mv.setViewName("jjs/admin/farmList");
-		return mv;
-	}
-	
-	@ResponseBody
-	@RequestMapping(value="/farmList_ajax")
-	public Map<String, Object> farmList_ajax(
-			@RequestParam(value="page", defaultValue="1", required = false) int page,
-			@RequestParam(value="farmSelect", required=false) int farmSelect){
-		
-		int limit = 2;
-		
-		int listcount = adminService.getfarmListCount();
-		
-		int maxpage = (listcount + limit - 1) / limit;
-		
-		int startpage = ((page - 1) / 10) * 10 + 1;
-		
-		int endpage = startpage + 10 - 1;
-		
-		if(endpage > maxpage) {
-			endpage = maxpage;
-		}
-		
-		List<Farm> farmlist = adminService.getFarmSelectList(page, limit, farmSelect);
-		
-		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("page", page);
-		map.put("maxpage", maxpage);
-		map.put("startpage", startpage);
-		map.put("endpage", endpage);
-		map.put("listcount", listcount);
-		map.put("farmlist", farmlist);
-		map.put("limit", limit);
-		return map;
-		
+		return "jjs/admin/farmList";
 	}
 	
 	@PostMapping("/categoryList")

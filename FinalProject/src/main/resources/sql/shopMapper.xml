@@ -1,21 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-
-<!-- <mapper namespace="Products">
-
-카테고리별 상품 리스트	
-	<select id="list" resultType="product" parameterType="map">
-		select *
-		from (select rownum rnum, pr.*
-			  from (select p.product_code, p.category_code, c.category_name, p.product_name, p.product_price,
-	  	   		  		   p.product_detail, p.product_img, p.product_original, p.product_date
-	  	   			from product p, CATEGORY c
-	  	   			where p.category_code = c.category_code
-	  	   			order by p.product_code) pr
-			 )
-		where rnum &gt;= #{start} and rnum &lt;= #{end}
-	</select>
-
-
-</mapper> -->
+<!-- 상품 목록 -->
+<select id="goodslist" resultType="com.hta.project.domain.Product">
+	select 
+		
+</select>

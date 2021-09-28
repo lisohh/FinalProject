@@ -23,18 +23,12 @@
  			select count(*) from jik
  	 </select>
  	 
- 	
- 	<select id="list" resultType="jik" parameterType="map">
- 			select * from
- 			( select ROWNUM RNUM, b.*
+  	<select id="list" resultType="jik" parameterType="map">
+ 			select * 
+ 			from (select ROWNUM RNUM, b.*
 				   from 
-				   		(select jik.*, nvl(cnt,0) cnt
-						 from
-						 jik left outer join (select jik_board_num, count(*) cnt
-							  					from jik_comm
-							  					group by jik_board_num) c
-						  on c.jik_board_num=jik.jik_num
-						  order by jik_num desc) b
+				   		(select * from jik 
+						 order by jik_num DESC) b
 					) 
 			where		
 			 <![CDATA[
